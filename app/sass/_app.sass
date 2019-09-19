@@ -1,0 +1,856 @@
+a
+	text-decoration: none
+	color: $b
+	&:hover
+		color: $main
+
+ul,
+ol
+	margin: 0
+	padding: 0
+
+button,
+input,
+textarea
+	outline: none
+
+*
+	box-sizing: border-box
+
+.content
+	max-width: 1110px
+	padding: 0 15px
+	margin: 0 auto
+	&.pr
+		+pr
+
+.btn
+	min-width: 100px
+	padding: 10px 14px
+	outline: none
+	border: 1px solid $w
+	transition: $t linear
+	display: inline-block
+	color: $w
+	text-transform: uppercase
+	&:hover
+		border-color: $main
+	&.nobd
+		border: 0
+	&.black
+		color: $b
+		border-color: $b
+	&.stripe
+		span
+			display: inline-block
+			&:before
+				content: '\f178'
+				+fa
+				display: inline-block
+				margin-left: 5px
+%menuLiA:before
+	+c
+	+pa
+	bottom: -20px
+	left: 50%
+	right: 50%
+	height: 2px
+	background: $w
+	transition: $t linear
+
+.hero
+	+pr
+	background-color: $w
+	overflow: hidden
+	&__logo
+		font-family: $pd
+		font-style: italic
+		font-weight: 700
+		a
+			color: $w
+			font-size: 20px
+		span
+			color: $main
+	&__top
+		+pa
+		top: 0
+		left: 0
+		width: 100%
+		z-index: 2
+		.content
+			min-height: 80px
+			+df
+			justify-content: space-between
+			+cv
+	&__burger
+		display: none
+		width: 40px
+		height: 40px
+		+pr
+		z-index: 100
+		background: $main
+		cursor: pointer
+		+pf
+		top: 20px
+		right: 20px
+		border: 0
+		padding: 0
+		transition: $t linear
+		&:hover
+			background: $b
+			span
+				background: $w
+		&.is--active
+			display: block
+			span
+				+pa
+				&:nth-of-type(2)
+					display: none
+				&:first-child,
+				&:last-child
+					top: 50%
+				&:first-child
+					left: 5px
+					transform: rotate(45deg)
+				&:last-child
+					right: 5px
+					transform: rotate(-45deg)
+
+		span
+			width: 30px
+			height: 3px
+			background: $b
+			display: block
+			transition: $t linear
+			&:nth-of-type(2)
+				margin: 5px 0
+		+r(768)
+			+df
+			+cc
+			flex-direction: column
+	&__menu
+		&.top
+			+r(768)
+				+pf
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				background: $b
+				z-index: 99
+				opacity: 0
+				display: none
+				&.is--active
+					opacity: 1
+					display: block
+				ul
+					+r(768)
+						height: 100%
+						flex-direction: column
+						+cc
+					li
+						+r(768)
+							margin-right: 0
+							a
+								+r(768)
+									padding: 20px
+		ul
+			+df
+			flex-wrap: wrap
+			li
+				margin-right: 30px
+				&:last-child
+					margin-right: 0
+					a
+						&:before
+							display: none
+				a
+					display: block
+					font-family: $mon
+					font-weight: bold
+					text-transform: uppercase
+					+pr
+					color: $main
+					transition: $t linear
+					font-size: 14px
+					
+					&.active
+						color: $w
+						&:before
+							@extend %menuLiA
+							left: 10%
+							right: 10%
+					&:before
+						@extend %menuLiA
+						+r(991)
+							display: none
+					&:hover
+						color: $w
+						&:before
+							left: 10%
+							right: 10%
+							+r(991)
+								display: none
+	&__slider
+		&-wrapper
+			+pr
+			width: 100%
+			min-height: 700px
+			height: 50vh
+		&-container
+			height: 100%
+			z-index: 2
+		&-next,
+		&-prev
+			+pa
+			top: 50%
+			transform: translate(0, -50%)
+			width: 50px
+			height: 50px
+			background-color: transparent
+			cursor: pointer
+			border: 0
+			z-index: 2
+			color: $w
+			i
+				font-size: 50px
+		&-next
+			right: 0
+		&-prev
+			left: 0
+		&-pagination
+			+pa
+			z-index: 2
+			bottom: 50px !important
+			left: 50% !important
+			transform: translate(-50%, 0)
+			width: auto !important
+			span
+				outline: none
+				opacity: 1 !important
+				background: $w
+				width: 10px
+				height: 10px
+				&.swiper-pagination-bullet-active
+					background: $main !important
+		&-slide
+			.content
+				height: 100%
+				+df
+				+cc
+		&-shapes
+			+pa
+			bottom: -1px
+			left: -10px
+			right: -10px
+			min-height: 480px
+			z-index: 1
+			pointer-events: none
+			+r(2000)
+				min-height: 600px
+			+r(768)
+				display: none
+			div
+				background-image: url('../images/header-shape.svg')
+				height: 100%
+				+pa
+				bottom: 0
+				width: 100%
+				background-position: bottom
+				// background-size: cover
+				background-size: 100%
+				background-repeat: no-repeat
+				text-align: center
+				pointer-events: none
+	&__image
+		+pa
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 0
+		&:before
+			+c
+			+pa
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: $b
+			opacity: .5
+	&__info
+		+pr
+		z-index: 2
+		color: $w
+		text-align: center
+	&__title
+		font-family: $pd
+		font-style: italic
+		font-size: 45px
+	&__slogan
+		padding: 25px 0
+		font-family: $ral
+		font-weight: 300
+		font-size: 24px
+
+$section_p: 100px
+.section
+	padding: $section_p 0
+	+r(768)
+		padding: $section_p/2 0
+	&__title
+		font-family: $pd
+		font-size: 32px
+		text-align: center
+		font-style: italic
+		+pr
+		margin-bottom: 60px
+		&:before
+			content: '&'
+			+pa
+			bottom: -40px
+			z-index: 1
+			+df
+			+cc
+			width: 50px
+			height: 40px
+			left: 50%
+			transform: translate(-50%, 0)
+			pointer-events: none
+		&.white
+			color: $w
+			&:before
+				color: $w
+			span
+				&:after,
+				&:before
+					background: $w
+		span
+			display: block
+			+pa
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			pointer-events: none
+			&:after,
+			&:before
+				+c
+				+pa
+				bottom: -20px
+				height: 1px
+				background: #808080
+				width: 80px
+				z-index: 0
+			&:after
+				transform: translate(-50%, 0)
+				left: calc(50% - 80px)
+			&:before
+				transform: translate(50%, 0)
+				right: calc(50% - 80px)
+	&__subinfo
+		text-align: center
+		color: #555
+		margin-bottom: 45px
+
+.services
+	&__layout
+		+dg
+		+gcol(4, 1fr)
+		+ggap(30px)
+		+r(1035)
+			+gcol(2, 1fr)
+			+ggap(30px)
+		+r(480)
+			+gcol(1, 1fr)
+	&__item
+		display: block
+		transition: $t linear
+		+r(1035)
+			text-align: center
+		&:hover
+			.services__info
+				&:before
+					background: $main
+	&__icon
+		width: 95px
+		height: 95px
+		background: #F0F0F0
+		+df
+		+cc
+		font-size: 30px
+		color: $b
+		+r(1035)
+			margin: 0 auto
+	&__title
+		font-weight: bold
+		padding: 15px 0 10px
+		font-size: 18px
+	&__info
+		line-height: 22px
+		+pr
+		color: $b
+		&:before
+			+c
+			+pa
+			bottom: -20px
+			left: 0
+			width: 20%
+			height: 3px
+			background: $b
+			transition: $t linear
+			+r(1035)
+				bottom: -15px
+				left: 50%
+				transform: translate(-50%, 0)
+
+.banner
+	+pr
+	overflow: hidden
+	background-color: $b
+	// margin-bottom: $section_p
+	// +r(768)
+	// 	margin-bottom: $section_p/2
+	&__image
+		width: 100%
+		height: 500px
+		+pa
+		left: 0
+		right: 0
+		top: 0
+		background-size: cover !important
+		background-position: 50% 50% !important
+		background-repeat: no-repeat !important
+		z-index: 1
+		&:before
+			+c
+			+pa
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: $b
+			opacity: .4
+	&__info
+		+pr
+		z-index: 1
+		color: $w
+		text-align: center
+		font-size: 23px
+		font-family: $pd
+
+.projects
+	background-image: url('../images/projects.png')
+	background-repeat: no-repeat
+	background-position: 50% 50%
+	background-size: cover
+	&__menu
+		@extend .hero__menu
+		margin-bottom: 60px
+		&:hover
+			ul
+				li
+					a
+						color: shade(#9B9B9B, 50%)
+		ul
+			+cg
+			li
+				&:last-child
+					a
+						&:before
+							display: block
+				a
+					color: #9B9B9B
+					+r(991)
+							padding: 10px 0
+					&.active
+						color: $b
+						&:before
+							background: $b
+					&:before
+						background: $b
+					&:hover
+						color: $b
+	&__layout
+		+dg
+		grid-auto-flow: column
+		+r(991)
+			display: block
+	&__item
+		background-size: cover !important
+		background-repeat: no-repeat !important
+		background-position: 50% 50% !important
+		display: block
+		box-shadow: none
+		transition: $t linear
+		+pr
+		&.last
+			background: $w
+			+df
+			+cc
+			color: $b
+			font-weight: bold
+			flex-direction: column
+			transition: $t linear
+			i
+				margin-top: 5px
+				transition: $t linear
+			&:hover
+				box-shadow: none
+				background: $b
+				color: $main
+				i
+					transform: translate(5px, 0)
+			&:before
+				display: none
+		&:before
+			+c
+			+pa
+			top: 3px
+			left: 3px
+			right: 3px
+			bottom: 3px
+			background: $b
+			opacity: 0
+			transition: $t linear
+		&:hover
+			box-shadow: inset 0 0 0 3px rgba($main, 1)
+			&:before
+				opacity: .7
+			.projects__info,
+			.projects__buttons
+				opacity: 1
+				visibility: visible
+			.projects__buttons
+				transform: translate(0, 0)
+		&.i1
+			min-height: 380px
+			min-width: 380px
+			grid-column: 1
+			grid-row: 1 / 3
+			+r(480)
+				min-width: 100%
+		&.i2
+			min-height: 190px
+			grid-column: 2
+			grid-row: 1 / 2
+			+r(991)
+				min-height: 380px
+		&-nested
+			&.i3
+				min-height: 190px
+				grid-column: 2
+				grid-row: 2 / 2
+				+dg
+				+gcol(2, 1fr)
+				+r(991)
+					min-height: 380px
+				+r(480)
+					+gcol(1, 1fr)
+		&.i4,
+		&.i5
+			+r(480)
+				min-height: 380px
+		&.i6
+			min-height: 380px
+			grid-column: 3
+			grid-row: 1 / 3
+		&.i7
+			grid-column: 4
+			grid-row: 1 / 2
+			+r(991)
+				min-height: 380px
+		&.i8
+			grid-column: 4
+			grid-row: 2 / 2
+			+r(991)
+				min-height: 380px
+	&__info
+		padding: 30px
+		color: $w
+		+pr
+		opacity: 0
+		transition: $t linear
+		&:before
+			+c
+			+pa
+			bottom: 15px
+			left: 30px
+			width: 30px
+			height: 2px
+			background: $main
+		span
+			display: block
+	&__title
+		font-weight: bold
+		text-transform: uppercase
+		font-family: $mon
+		margin-bottom: 5px
+		a
+			color: $w
+			&:hover
+				color: $main
+	&__category
+		font-family: $ral
+		font-size: 12px
+	&__buttons
+		+pa
+		bottom: 30px
+		right: 30px
+		+df
+		justify-content: space-between
+		transition: $t linear
+		opacity: 0
+		visibility: hidden
+		transform: translate(0, 10px)
+		a
+			background: #323232
+			border-radius: 2px
+			color: $w
+			transition: $t linear
+			+df
+			+cc
+			width: 30px
+			height: 30px
+			margin-right: 10px
+			&:last-child
+				margin-right: 0
+			&:hover
+				background: $main
+				color: #323232
+
+.comments
+	background-image: url('../images/comments-slider-bg.png')
+	background-size: cover !important
+	background-repeat: no-repeat !important
+	background-position: 50% 50% !important
+	color: $w
+	+pr
+	&:before
+		+c
+		+pa
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: $b
+		opacity: .8
+	&__photo
+		background-size: cover !important
+		background-position: 50% 20%
+		width: 100px
+		height: 100px
+		margin: 0 auto 40px
+		border-radius: 50%
+	&__slider
+		&-navigation
+			+pa
+			left: 50%
+			top: 0
+			transform: translate(-50%, 32px)
+			z-index: 1
+			button
+				+pa
+				width: 40px
+				height: 40px
+				font-size: 30px
+				background-color: transparent
+				border: 0
+				cursor: pointer
+				color: $w
+				&:hover
+					color: $main
+		&-next
+			left: 60px
+		&-prev
+			right: 60px
+		&-text
+			text-align: center
+			line-height: 25px
+			font-style: italic
+			font-family: $pd
+			font-size: 18px
+			margin-bottom: 60px
+			+pr
+			&:before
+				+c
+				+pa
+				bottom: -30px
+				left: 50%
+				transform: translate(-50%, 0)
+				width: 30px
+				height: 3px
+				background: $w
+		&-author
+			text-align: center
+			text-transform: uppercase
+			font-weight: bold
+		&-name
+			color: $main
+		&-company
+			display: inline-block
+			&:before
+				content: '-'
+				left: 0
+
+.companys
+	&__slider
+		color: $b
+		&-wrapper
+			+pa
+			top: -75px
+			left: 0
+			right: 0
+			height: 150px
+			.content
+				height: 100%
+		&-container
+			height: 100%
+			background: $w
+		&-slide
+			height: 100%
+			+df
+			+cc
+			img
+				max-width: 100%
+		&-next,
+		&-prev
+			+pa
+			top: 50%
+			width: 40px
+			height: 40px
+			background-color: transparent
+			border: 0
+			color: $b
+			cursor: pointer
+			transform: translate(0, -50%)
+			z-index: 1
+			&:hover
+				color: $main
+		&-next
+			right: 0
+		&-prev
+			left: 0
+
+.blog
+	background: #EBEBEB
+	&__layout
+		+dg
+		+gcol(4, 1fr)
+		+ggap(30px)
+		margin-bottom: $section_p - 15
+		+r(1035)
+			margin-bottom: $section_p/2 - 30
+			+gcol(2, 1fr)
+		+r(480)
+			+gcol(1, 1fr)
+	&__item
+		color: $b
+		background: $w
+		padding: 30px
+	&__text
+		@extend .section__subinfo
+		margin: 10px 0
+		text-align: left
+	&__readmore,
+	&__title
+		text-transform: uppercase
+		font-weight: bold
+		font-family: $mon
+	&__viewall
+		+pa
+		left: 50%
+		transform: translate(-50%, 0)
+		font-weight: bold
+		min-width: 220px
+		&:hover
+			span
+				&:before
+					transform: translate(5px, 0)
+		span
+			&:before
+				transition: $t linear
+
+.buynow
+	+pr
+	overflow: hidden
+	&__bg
+		+pa
+		top: 0
+		left: 0
+		width: 100%
+		height: 500px
+		&:before
+			+c
+			+pa
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			+gdef(to top, $b, transparent)
+	&__info
+		+pr
+		z-index: 1
+		color: $w
+		+df
+		justify-content: space-between
+		flex-wrap: wrap
+		+cv
+		+r(768)
+			display: block
+			text-align: center
+	&__text
+		font-weight: bold
+		font-size: 15px
+		text-transform: uppercase
+		font-family: $mon
+		+r(768)
+			margin-bottom: 15px
+		p
+			margin: 0
+	&__btn
+		min-width: 200px
+		text-align: center
+
+.footer
+	background: #171717
+	padding: 40px 0
+	color: $w
+	text-align: center
+	&__logo
+		@extend .hero__logo
+		
+		a
+			display: inline-block
+			+pr
+			&:before
+				+c
+				+pa
+				width: 70px
+				z-index: 0
+				top: -10px
+				height: 1px
+				background: #6D6D6D
+				transform: rotate(-45deg) translate(-50%, 0)
+				left: 50%
+	&__socials
+		+df
+		+cc
+		padding: 20px 0
+		li
+			margin-right: 15px
+			&:last-child
+				margin-right: 0
+			a
+				width: 35px
+				height: 35px
+				+df
+				+cc
+				font-size: 14px
+				color: $w
+				border: 1px solid #959595
+				transition: $t
+				&:hover
+					border-color: $main
+					background: $main
+					color: #1F1F1F

@@ -1,0 +1,16 @@
+{
+  "name": "architecturex",
+  "description": "just layout",
+  "version": "1.0.0",
+  "dependencies": {
+    "magnific-popup": "^1.1.0",
+    "bootstrap": "^4.3.1",
+    "animate.css": "^3.5.2",
+    "font-awesome": "fontawesome#^4.7.0",
+    "waypoints": "^4.0.1",
+    "svg4everybody": "^2.1.9",
+    "jquery": "^3.3.1",
+    "swiper": "^5.0.2",
+    "Scrollax.js": "^1.0.0"
+  }
+}

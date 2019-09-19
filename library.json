@@ -1,0 +1,11 @@
+{
+	"jslibs": [
+		"-"
+	],
+	"csslibs": [
+		"app/libs/animate.css/animate.min.css",
+		"app/libs/font-awesome/css/font-awesome.min.css",
+		"app/libs/magnific-popup/dist/magnific-popup.css",
+		"app/libs/swiper/package/css/swiper.css"
+	]
+}
